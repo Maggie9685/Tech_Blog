@@ -1,0 +1,20 @@
+<div class="row">
+  <h2>
+    Comments
+  </h2>
+  {{#each this}}
+  <section class="comment">
+    <div class="meta">
+      {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+    {{#if @root.loggedIn}}
+      <button type="button" class="delete-comment-btn" id="{{this.id}}">Delete Comment</button>
+    {{/if}}
+  </section>
+  {{/each}}
+</div>
+
+<script src="/js/delete-comment.js"></script>
